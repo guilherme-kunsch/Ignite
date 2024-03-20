@@ -1,14 +1,13 @@
+import { Avatar } from "./Avatar";
 import styles from "./Post.module.css";
+import { Comment } from "./Comment";
 
 export function Post() {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://avatars.githubusercontent.com/u/75049024?v=4"
-          />
+          <Avatar hasBorder src="https://avatars.githubusercontent.com/u/75049024?v=4"/>
           <div className={styles.authorInfo}>
             <strong>Guilherme Kunsch</strong>
             <span>Analista de Suporte de TI</span>
@@ -35,6 +34,9 @@ export function Post() {
         />
         <button type="submit">Comentar</button>
       </form>
+      <div>
+        <Comment />
+      </div>
     </article>
   );
 }
