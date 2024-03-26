@@ -21,12 +21,12 @@ export function App() {
         },
         { type: "link", content: "👉 jane.design/doctorcare" },
       ],
-      publishedAt: new Date("21-03-2024 17:50"),
+      publishedAt: new Date("2024-03-25"),
     },
     {
       id: 2,
       author: {
-        avatarUrl: "https://github.com/guilherme-kunsch",
+        avatarUrl: "https://github.com/guilherme-kunsch.png",
         name: "Gabrielly Oliveira",
         role: "Farmacêutica",
       },
@@ -39,7 +39,7 @@ export function App() {
         },
         { type: "link", content: "👉 jane.design/doctorcare" },
       ],
-      publishedAt: new Date("21-03-2024 17:50"),
+      publishedAt: new Date("2024-03-25"),
     },
   ];
 

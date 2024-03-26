@@ -1,20 +1,25 @@
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 import { Avatar } from "./Avatar";
 import styles from "./Post.module.css";
 import { Comment } from "./Comment";
 
-export function Post(props) {
-  console.log(props)
+export function Post({ author, publishedAt }) {
+  
+  const publishedDateFormatted = format(publishedAt, "'Dia' dd 'de' MM 'de' yyyy")
+  console.log(publishedDateFormatted)
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar hasBorder src="https://avatars.githubusercontent.com/u/75049024?v=4"/>
+          <Avatar src={author.avatarUrl}/>
           <div className={styles.authorInfo}>
             <strong>Guilherme Kunsch</strong>
             <span>Analista de Suporte de TI</span>
           </div>
         </div>
-        <time dateTime="2024-02-29">Publicado há 1h</time>
+        <time dateTime="2024-02-29 22:00:00">{publishedDateFormatted}</time>
       </header>
       <div className={styles.content}>
           <p>Fala galeraa 👋</p> 
