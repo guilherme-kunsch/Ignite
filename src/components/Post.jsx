@@ -15,14 +15,25 @@ export function Post({ author, publishedAt, content }) {
     addSuffix: true
   })
 
+  const comments = [
+    1,
+    2,
+    3,
+    4
+  ]
+
+  function handleCreateNewComment() {
+    
+  }
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
           <Avatar src={author.avatarUrl}/>
           <div className={styles.authorInfo}>
-            <strong>Guilherme Kunsch</strong>
-            <span>Analista de Suporte de TI</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
         <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
@@ -46,7 +57,9 @@ export function Post({ author, publishedAt, content }) {
         <button type="submit">Comentar</button>
       </form>
       <div>
-        <Comment />
+        {comments.map(comment => {
+          return <Comment />
+        })}
       </div>
     </article>
   );
